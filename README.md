@@ -1,4 +1,5 @@
 # npix-1word
+> simple game that task you to give a word to picture(s) of different categories which includes: tech, programming, location, etc
 
 ## Project setup
 ```
