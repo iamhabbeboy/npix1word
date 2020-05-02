@@ -12,7 +12,7 @@ app.use(
 );
 app.use(staticFileMiddleware);
 
-const port = 5555;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
 console.log(`App listening on port ${port}!`); //eslint-disable-line
 });
