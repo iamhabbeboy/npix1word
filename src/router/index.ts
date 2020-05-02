@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-let lazyLoader = function(page: string) {
+let lazyLoader = function (page: string) {
   return () => import(`@/views/${page}.vue`)
 }
 
@@ -11,12 +11,17 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: lazyLoader('Home')
+    component: lazyLoader("Home")
   },
   {
-    path: "/game",
+    path: "/category",
+    name: "category",
+    component: lazyLoader("Category")
+  },
+  {
+    path: "/game/:id",
     name: "game",
-    component: lazyLoader('Game')
+    component: lazyLoader("Game")
   }
 ];
 
