@@ -22,7 +22,7 @@
     <br />
     <br />
     <p>
-      <button class="btn btn-info">Restart</button>
+      <button class="btn btn-info" @click="restartGame">Restart</button>
       &nbsp;
       <button class="btn btn-danger">Reset</button>
       &nbsp;
@@ -115,7 +115,8 @@ export default {
       ],
       id: 1,
       data: undefined,
-      storage: undefined
+      storage: undefined,
+      scores: 0
     };
   },
   mounted() {
@@ -147,13 +148,14 @@ export default {
       });
       if (ans.join("") === output.join("")) {
         alert("Correct Answer");
+        this.scores = this.scores + 100;
         ans.map((resp, index) => {
           _index[index].value = "";
         });
-        this.highestGameLevel();
         const _id =
           this.storage !== null ? parseInt(this.storage) + 1 : this.id + 1;
         localStorage.setItem("user-game", _id);
+        this.highestGameLevel();
         return window.location.reload();
       }
       return alert("Wrong Answer");
@@ -164,7 +166,16 @@ export default {
         alert(
           "Congratulations, You have gotten to the highest level of the game."
         );
-        this.$router.push("/category");
+        localStorage.removeItem("user-game");
+        localStorage.removeItem("game-score");
+        return (window.location = "/category");
+      }
+    },
+    restartGame() {
+      if (window.confirm("Are you sure you want to restart the game ?")) {
+        localStorage.removeItem("user-game");
+        localStorage.removeItem("game-score");
+        window.location.reload();
       }
     },
     monitorChars() {
