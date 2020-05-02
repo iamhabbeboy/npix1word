@@ -3,9 +3,9 @@
     <h1>Category here</h1>
     <ul>
       <li v-for="(category, index) of categories" :key="index">
-        <router-link :to="{ name: 'game', params: { id: category.id } }">{{
-          category.title
-        }}</router-link>
+        <router-link :to="{ name: 'game', params: { id: category.id } }">
+          {{ category.title }}
+        </router-link>
       </li>
     </ul>
   </div>

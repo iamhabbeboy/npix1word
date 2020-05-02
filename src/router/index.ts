@@ -3,9 +3,9 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-let lazyLoader = function (page: string) {
-  return () => import(`@/views/${page}.vue`)
-}
+let lazyLoader = function(page: string) {
+  return () => import(`@/views/${page}.vue`);
+};
 
 const routes = [
   {
@@ -24,7 +24,6 @@ const routes = [
     component: lazyLoader("Game")
   }
 ];
-
 
 const router = new VueRouter({
   mode: "history",

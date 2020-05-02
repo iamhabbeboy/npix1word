@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="columns">
-  <div class="column is-half is-offset-one-quarter">sdfsdfsdf</div>
-</div>
+      <div class="column is-half is-offset-one-quarter">sdfsdfsdf</div>
+    </div>
   </div>
 </template>
 
@@ -16,8 +16,7 @@ export default class HelloWorld extends Vue {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss" >
-
+<style scoped lang="scss">
 h3 {
   margin: 40px 0 0;
 }
