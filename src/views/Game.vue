@@ -141,7 +141,8 @@ export default {
   },
   methods: {
     verify() {
-      const ans = this.data["answer"].toLowerCase().split("");
+      let answerText = this.data["answer"].toLowerCase();
+      const ans = answerText.split("");
       const _index = this.$refs["answer"];
       const output = ans.map((resp, index) => {
         return _index[index].value;
